@@ -1,0 +1,17 @@
+.text{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto 20px;
+}
+
+.text p.title{
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text p.subtitle{
+    font-size: 36px;
+    text-align: center;
+}
