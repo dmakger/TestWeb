@@ -1,0 +1,56 @@
+{% extends './base.html' %}
+{% load static %}
+
+<!-- <link rel="stylesheet" href="{% static '/css/home.css' %}"> -->
+{% block title %}Moon Test - лучшие тесты по космосу{% endblock %}
+
+{% block content %}
+    <div class="text">
+        <p class="title">Тесты ко дню “Космонавтики”</p>
+        <p class="subtitle">
+            В честь дня “Космонавтики” мы создали пару занятных 
+            тестов, чтобы вы смогли проверить себя и освяжить 
+            знания
+        </p>
+    </div>
+    <div class="tests">
+        <div class="row">
+            <!-- <div class="shadow"> -->
+                <div class="test test-1">
+                    <div class="content">
+                        <div class="tag">
+                            <p>КОСМОС</p>
+                        </div>
+                        <div class="title">Что вы знаете о космосе?</div>
+                        <div class="difficult">Сложность | 3.0</div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+        <div class="row">
+            <div class="test test-2">
+                <div class="content">
+                    <div class="tag">
+                        <p>КОСМОС</p>
+                    </div>
+                    <div class="title">“История ракетостроения”</div>
+                    <div class="difficult">Сложность | 4.5</div>
+                </div>
+            </div>
+            <div class="test test-3">
+                <div class="content">
+                    <div class="tag">
+                        <p>АСТРОНОМИЯ</p>
+                    </div>
+                    <div class="title">Планеты солнечной системы</div>
+                    <div class="difficult">Сложность | 2.5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+{% endblock %}
