@@ -15,17 +15,27 @@
     </div>
     <div class="tests">
 
+        {% for test in tests %}
         <div class="row">
-
-            <a class="test test-1">
+            <a class="test">
+            <style>
+                a.test{
+                    background: url(/media/{{test.image}});
+                    background-repeat: no-repeat; 
+                    background-size: cover;
+                }
+            </style>
                 <div class="shadow">
-                    <p class='tag'>КОСМОС</p>
-                    <p class="title">Что вы знаете о космосе?</p>
-                    <p class="difficult">Сложность | 3.0</p>
+                    <!-- <div class="cover">
+                        <img src="/media/{{test.image}}" alt="">
+                    </div> -->
+                    <p class="tag">{{ test.tag|upper }}</p>
+                    <p class="title">{{ test.title }}</p>
+                    <p class="difficult">Сложность | {{ test.difficult }}</p>
                 </div>
             </a>
-
         </div>
+        {% endfor %}
 
         <div class="row">
 

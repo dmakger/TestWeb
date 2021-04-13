@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views import View
+from .models import Test
 
-# Create your views here.
+
 class MainView(View):
     def get(self, request, *args, **kwargs):
-        return render(
-            request,
-            'moon_test_app/home.html'
-        )
+        tests = Test.objects.all()
+        return render( request, 'moon_test_app/home.html', context={
+            'tests': tests
+        })
