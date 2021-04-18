@@ -50,25 +50,8 @@
     text-align: center;
     color: #fff;
     margin: 15px;
+    text-decoration: none;
 }
-
-/* .test-1{
-    background-image: url(../img/1.jpg);
-    background-repeat: no-repeat; 
-    background-size: cover;
-}
-
-.test-2{
-    background-image: url(../img/2.jpg);
-    background-repeat: no-repeat; 
-    background-size: cover;
-}
-
-.test-3{
-    background-image: url(../img/3.jpg);
-    background-repeat: no-repeat; 
-    background-size: cover;
-} */
 
 .shadow{
     background: rgba(0, 0, 0, 0.3);
@@ -86,19 +69,7 @@
 .shadow:hover{
 	background: rgba(0, 0, 0, 0.5);
 	transition: ease 0.3s;
-}
-
-.test .shadow .cover{
-    background: transparent no-repeat fixed center /cover;
-    position: relative;
-}
-
-.test .shadow .cover img{
-    width: 100%;
-    height: 400px;
-    position: relative;
-    z-index: -1;
-    top: 92px;
+    cursor: pointer;
 }
 
 .test p.tag{

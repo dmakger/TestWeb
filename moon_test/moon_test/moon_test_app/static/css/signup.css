@@ -1,0 +1,54 @@
+.alert-danger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 20px;
+    background-color: #f9d5da;
+    color: #8f2628;
+}
+
+.content{
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 70px auto 100px;
+}
+
+.content .h-register{
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.content form{
+    display: flex;
+    flex-direction: column;
+}
+
+.content form input[type=text],
+.content form input[type=password]{
+    margin-top: 5px;
+    width: 20vw;
+    font-size: 17px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.content form button[type=submit]{
+    margin-top: 10px;
+    background-color: #282828;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    transition: ease 0.1s;
+}
+
+.content form button[type=submit]:hover{
+    transition: ease 0.2s;
+    background-color: #3a3939;
+}

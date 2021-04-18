@@ -1,0 +1,52 @@
+{% extends './base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %} {{ test.title }} {% endblock %}
+
+
+{% block content %}
+<!-- n - номер теста. qa - данные о тесте -->
+<!-- "input[type='radio']:checked" -->
+<form action="{% url 'test_result' slug=test.url %}" method="POST">
+    {% csrf_token %}
+    {% if user.is_authenticated %}
+        <input type="text" name="username" value="{{ user }}" class="username">
+    {% else %}
+        <input type="text" name="username" value="" class="username">
+    {% endif %}
+    {% for n, qa in questions.items %}
+        <div class="question q-{{ n }}">
+            {% for key,value in qa.items %}
+                <!-- Если вопрос -->
+                {% if key == 'q' %}
+                    <p class="q">{{ value }}</p>
+                <!-- Если ответы -->
+                {% elif key == 'a' %}
+                    {% for pk,a in value.items %}
+                        <input type="radio" name='{{ n }}' id="{{ n }}-{{ pk }}" value="{{ n }}-{{ pk }}"/>
+                        <label for="{{ n }}-{{ pk }}">{{ a }}</label>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+
+            <div class="buttons">
+                {% if n != 1 %}
+                    <input type="button" class="back" value="Назад" onclick="swapDisplay('q-{{ n }}','q-{{ n|add:-1 }}')"/>
+                {% endif %}
+                {% if n == questions|length %}
+                    <input type="submit" class="finish" value="Закончить тест"/>
+                {% else %}
+                    <input type="button" class="next" value="Далее" onclick="swapDisplay('q-{{ n }}','q-{{ n|add:1 }}')"/>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</form>
+{% endblock %} 
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static '/css/test_qa.css' %}">
+    <script type="text/javascript" src="{% static '/script/test_qa.js' %}"></script>
+{% endblock %}

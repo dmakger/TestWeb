@@ -1,3 +1,15 @@
 <header class="header">
-    <a href="#" class="logo">MOON TEST</a>
+    <div class="case-logo">
+        <a href="/" class="logo">moon test</a>
+    </div>
+    <div class="sign">
+        {% if user.is_authenticated %}
+            <p class="login">{{ user }}</p>
+            <a href="{% url 'signout' %}" class="sign_out">Выход</a>
+        {% else %}
+            <a href="{% url 'signin' %}" class="sign_in">Вход</a>
+            <a href="{% url 'signup' %}" class="sign_up">Регистрация</a>
+        {% endif %}
+    </div>
+
 </header>

@@ -1,7 +1,6 @@
 {% extends './base.html' %}
 {% load static %}
 
-<!-- <link rel="stylesheet" href="{% static '/css/home.css' %}"> -->
 {% block title %}Moon Test - лучшие тесты по космосу{% endblock %}
 
 {% block content %}
@@ -17,18 +16,13 @@
 
         {% for test in tests %}
         <div class="row">
-            <a class="test">
-            <style>
-                a.test{
-                    background: url(/media/{{test.image}});
-                    background-repeat: no-repeat; 
-                    background-size: cover;
-                }
-            </style>
+            <a class="test" href="{% url 'test_detail' slug=test.url %}"
+            style="
+            background: url(/media/{{test.image}}); 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            ">
                 <div class="shadow">
-                    <!-- <div class="cover">
-                        <img src="/media/{{test.image}}" alt="">
-                    </div> -->
                     <p class="tag">{{ test.tag|upper }}</p>
                     <p class="title">{{ test.title }}</p>
                     <p class="difficult">Сложность | {{ test.difficult }}</p>
@@ -36,26 +30,6 @@
             </a>
         </div>
         {% endfor %}
-
-        <div class="row">
-
-            <a class="test test-2">
-                <div class="shadow">
-                    <p class="tag">КОСМОС</p>
-                    <p class="title">“История ракетостроения”</p>
-                    <p class="difficult">Сложность | 4.5</p>
-                </div>
-            </a>
-
-            <a class="test test-3">
-                <div class="shadow">
-                    <p class="tag">АСТРОНОМИЯ</p>
-                    <p class="title">Планеты солнечной системы</p>
-                    <p class="difficult">Сложность | 2.5</p>
-                </div>
-            </a>
-
-        </div>
 
     </div>
 {% endblock %}

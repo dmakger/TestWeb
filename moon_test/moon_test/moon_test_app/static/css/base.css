@@ -9,6 +9,10 @@
     /*box-sizing: border-box;*/
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
     background-color: #F2F2F2;
     font-family: 'William', sans-serif;
@@ -17,16 +21,90 @@ body{
 header{
     width: 100%;
     height: 100px;
-    display: flex;
+    position: relative;
+    /* display: flex; */
+    /* align-items: center; */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-header a.logo{
+/* header a.logo{
     margin: auto;
+    text-decoration: none;
+    text-transform: uppercase;
+
     font-size: 42px;
     border-bottom: 2px solid #000;
     color: #000;
+} */
+
+header .case-logo{
+    float: left;
+    height: 100%;
+    display: flex;
+}
+
+header .case-logo a.logo{
+    /* top: 100px; */
+    margin: auto 0;
+    margin-left: 100px;
+    text-transform: capitalize;
+
+    font-size: 42px;
+    border-bottom: 2px solid #282828;
+    color: #000;
     text-decoration: none;
+}
+
+header .sign{
+    float: right;
+    height: 100%;
+    display: flex;
+    margin-right: 80px;
+}
+
+header p.login{
+    cursor: pointer;
+    border-bottom: 2px solid #282828;
+    height: 20px;
+
+    padding: 10px 2px;  
+    margin: auto 0;
+    margin-right: 20px;
+
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+header p.login:hover{
+    transition: ease 0.3s;
+    padding: 10px 20px;
+}
+
+header a.sign_in,
+header a.sign_up,
+header a.sign_out{
+    border: 2px solid #282828;
+    border-radius: 6px;
+    height: 20px;
+
+    padding: 10px 20px;
+    margin: auto 0;
+    margin-right: 20px;
+
+    font-size: 20px;
+    color: #000;
+    transition: ease 0.2s;
+    text-decoration: none;
+}
+
+header a.sign_in:hover,
+header a.sign_up:hover,
+header a.sign_out:hover{
+    transition: ease 0.3s;
+    background-color: #282828;
+    color: #fff;
 }
 
 footer{
