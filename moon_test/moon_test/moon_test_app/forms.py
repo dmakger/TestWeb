@@ -1,20 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-# from django.forms.fields import ChoiceField
-
-
-# class RegisterTestForm(forms.Form):
-#     # group = forms.ChoiceField()
-#     group = forms.CharField(
-#         max_length=30,
-#         required=True,
-#         widget=forms.TextInput(attrs={
-#             'class': "form-test",
-#             'id': "inputGroup",
-#             'placeholder': "Имя группы"
-#         }),
-#     )
 
 
 class SignUpForm(forms.Form):
