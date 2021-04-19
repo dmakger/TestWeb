@@ -149,7 +149,7 @@ class TestResultView(View):
         for answer in result:
             if answer in a_true:
                 n_answer_true += 1
-        # Процент правельных ответов
+        # Процент правильных ответов
         percent_true_answer = round(n_answer_true/len(a_true) * 100, 2)
         
         # Если незарегистрированный пользователь
