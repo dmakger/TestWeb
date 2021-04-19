@@ -163,10 +163,9 @@ class TestResultView(View):
     def post(self, request, slug, *args, **kwargs):
         print('---')
         print(request.POST)
-
+	
         # Получаем список ответов пользователя. (При этом удалив username и csrfmiddlewaretoken)
-        # result = [key for key in sorted(request.POST.keys()) if key[0].isdigit()]
-        result = [key for key in sorted(request.POST.values()) if key[0].isdigit()]
+        result = [key for key in sorted(request.POST.values()) if key != '' and key[0].isdigit()]
         print("Ответы пользователя: ", result)
 
         # Формируем список правельных ответов
@@ -193,40 +192,45 @@ class TestResultView(View):
         percent_true_answer = round(n_answer_true/len(a_true) * 100, 2)
         print("В процентном соотношении: ", percent_true_answer)
         print('---')
-
         
-        result_test = ResultTest.objects.filter(name=request.POST['username'], test_id=test.id)
-        print(result_test)
-        # Если пользователь ещё не проходил тест, то регистрируем его
-        if not result_test:
-            print('not')
-            group = Human.objects.filter(name=request.POST['username'])
-            # Пользователь не указал свою группу
-            if not group:
-                group = 'Аноним'
-            # Пользователь указал свою группу
-            else:
-                group = group[0].group
-            result_test = ResultTest(
-                name=request.POST['username'],
-                test_id=test.id,
-                group=group,
-                result=percent_true_answer,
-            )
-        # Пользователь уже проходил тест
+        if request.POST['username'] == '':
+        	result_test = {
+        		'test_id': test.id,
+        		'result': percent_true_answer,
+        	}
         else:
-            print('yes')
-            result_test = result_test[0]
-            result_test.result = percent_true_answer
-        #     # Если новый результат лучше прежнего, обновляем данные
-        #     if percent_true_answer > result_test.result:
-        #         result_test.result = percent_true_answer
-
-        # Если десятичние числа равны 0, то приводим к int
-        if result_test.result == int(result_test.result):
-            result_test.result = int(result_test.result)
-        print(result_test)
-        result_test.save()
+        	result_test = ResultTest.objects.filter(name=request.POST['username'], test_id=test.id)
+        	print(result_test)
+        	# Если пользователь ещё не проходил тест, то регистрируем его
+        	if not result_test:
+        		print('not')
+        		group = Human.objects.filter(name=request.POST['username'])
+        		# Пользователь не указал свою группу
+        		if not group:
+        			group = 'Аноним'
+        		# Пользователь указал свою группу
+        		else:
+        			group = group[0].group
+        		result_test = ResultTest(
+        			name=request.POST['username'],
+        			test_id=test.id,
+        			group=group,
+        			result=percent_true_answer,
+        		)
+        	# Пользователь уже проходил тест
+        	else:
+        		print('yes')
+        		result_test = result_test[0]
+        		result_test.result = percent_true_answer
+        	#     # Если новый результат лучше прежнего, обновляем данные
+        	#     if percent_true_answer > result_test.result:
+        	#         result_test.result = percent_true_answer
+        	
+        	# Если десятичние числа равны 0, то приводим к int
+        	if result_test.result == int(result_test.result):
+        		result_test.result = int(result_test.result)
+        	print(result_test)
+        	result_test.save()
         return render(request, 'moon_test_app/test_result.html', context={
             'test': test,
             'result_test': result_test,
