@@ -101,26 +101,3 @@ class SignInForm(forms.Form):
             'placeholder': "Пароль"
         })
     )
-
-
-class ResultForm(forms.Form):
-
-    username = forms.CharField(
-        max_length=100,
-        required=True,
-        widget=forms.TextInput(attrs={
-            'class': "login",
-            'id': "inputUsername",
-            'placeholder': "Имя пользователя"
-        })
-    )
-
-    password = forms.CharField(
-        max_length=100,
-        required=True,
-        widget=forms.PasswordInput(attrs={
-            'class': "password",
-            'id': "inputPassword",
-            'placeholder': "Пароль"
-        })
-    )
