@@ -30,4 +30,4 @@ python3 manage.py runserver
 deactivate
 ```
 
-На этом всё.
+На этом всё
