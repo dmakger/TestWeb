@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'Montserrat-Light'; 
+    src: url(fonts/Montserrat-Light.otf);
+}
+@font-face {
+    font-family: 'Montserrat'; 
+    src: url(fonts/Montserrat-Medium.otf);
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/*h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}*/
+
+
+/* Header */
+.header {
+    width: 100%;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 19vh;
+}
+
+.header__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 30px;
+    /*font-weight: 700;*/
+    font-family: 'Montserrat-Light', sans-serif;
+    color: #000;
+    
+    width: 100%;
+    height: 13vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Nav */
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position: relative;
+
+    color: #000;
+    text-decoration: none;
+
+    transition: color .1s linear;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fce38a;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .1s linear;
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}
+
+.nav__link:hover:after,
+.nav__link.active:after {
+    opacity: 1;
+}
+
+.nav__link.active {
+    color: #fce38a;
+}
+
+/*Блок 1*/
+
+.block1{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    
+    justify-content: center;
+    padding: 0 10%;
+}
+
+.block1__img{
+    width: 300px;
+    height: 400px;
+
+    background-image: url(img/Марина1.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center center;
+    
+    border-radius: 20px;
+}
+.block1__text{
+    margin-left: 5%;
+    width: 50%;
+}
+@media screen and (max-width: 900px) {
+    .block1{
+        flex-direction: column;
+        -ms-align-items: center;
+        align-items: center;
+    }
+    .block1__text{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+/*Footer*/
+
+.footer{
+    width: 100%;
+    text-align: center;
+    margin: 5% auto;
+}
