@@ -1,0 +1,30 @@
+.block2 .c1 img.high{
+	height: 270px;
+}
+.block2 .c1 img.high2{
+	height: 200px;
+	width: 140px;
+}
+.block2 .c1 img.high3{
+	height: 270px;
+	width: 110px;
+}
+.block2 .c1 img.high4{
+	height: 200px;
+	width: 110px;
+}
+.block2 .c1 img.wide{
+	height: 150px;
+	width: 320px;
+}
+.block2 .c1 img.wide2{
+	height: 100px;
+	width: 220px;
+}
+.block2 .c1 img.wide3{
+	height: 100px;
+	width: 320px;
+}
+.block2 .c1 img.pt{
+	padding-top: 10px;
+}

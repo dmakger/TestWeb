@@ -1,0 +1,91 @@
+*, *:before, *:after {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+body {
+  background: #5e5e73; 
+  /*color: #B9B5C7;*/ 
+  color: #fff;
+  /*font: 14px 'Open Sans', sans-serif;*/
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Контент теста*/
+.content{
+  margin: 7.5% 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Изображение*/
+.content__img{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+
+	background-image: url(img/1.jpg);
+	background-repeat: none;
+	background-position: center center;
+	background-size: cover;
+}
+
+/*Имя теста*/
+.content__name{
+	padding: 30px 0;
+	font-size: 36px;
+	line-height: 1.2;
+	font-weight: 400;
+
+	text-align: center;
+}
+
+/*Начать тест*/
+.content__button{
+	transition: 0.3s;
+	margin: 10px 0;
+
+	font-size: 25px;
+	padding: 15px 70px;
+
+	background-color: #4f4e66;
+	border-radius: 10px;
+	border: 3px #4f4e66 solid;
+}
+
+.content__button:hover{
+	transition: 0.3s;
+
+	background-color: #5e5e73;
+	border: 3px #fff solid;
+}
+
+
+/*Вступительный текст*/
+.content__text{
+	margin: 50px 0;
+	font-size: 18px;
+	min-width: 100px;
+
+	text-align: center;
+}
+
+ /*
+h1 {
+  padding: 50px 0; 
+  font-weight: 400; 
+  text-align: center;
+}
+		 
+.main {
+  margin: 0 auto; 
+  max-width: 500px;
+}
+.main .quizsection {margin-bottom: 20px;}*/
