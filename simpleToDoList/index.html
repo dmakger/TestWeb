@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<title>To-do list</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="jquery-3.6.0.min.js"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div id="popup-container">
+		<div id="popup">TEST</div>
+	</div>
+	<button id="showShadow">Get shadow</button>
+	<div class="container">
+		<div id="task-list">
+			<h2>Список дел:</h2>
+			<p class="empty">Список пуст...</p>
+			<!-- <div class="task">
+				<div class="main-row">
+					<h3 class="name-task">123</h3>
+					<img src="img/cross.svg" alt="Удаление" class="del-task">
+					<img src="img/arrow-left.svg" alt="Развернуть" class="expand-task">
+					<img src="img/arrow-down.svg" alt="Свернуть" class="roll-up-task">
+				</div>
+				<p class="description-task">123</p>
+			</div>
+			<div class="task">
+				<div class="main-row">
+					<h3 class="name-task">123</h3>
+					<img src="img/cross.svg" alt="Удаление" class="del-task">
+					<img src="img/arrow-left.svg" alt="Развернуть" class="expand-task">
+					<img src="img/arrow-down.svg" alt="Свернуть" class="roll-up-task">
+				</div>
+				<p class="description-task">123</p>
+			</div> -->
+		</div>
+		<div id="adder-task">
+			<h2>Добавить новое дело</h2>
+			<div class="wrapper">
+				<form action="post" id="adder-form">
+					<label for="new-name-task">* Название</label>
+					<input type="text" id="new-name-task" maxlength="35" required="required">
+					<label for="new-description-task">* Описание</label>
+					<textarea name="" id="new-description-task" cols="30" rows="10" required="required"></textarea>
+
+					<input type="submit" value="Добавить дело" id="button-add-task">
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="box">
+		<div id="plan">
+		
+		</div>
+	</div>
+</body>
+</html>
